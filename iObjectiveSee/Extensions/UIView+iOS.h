@@ -10,6 +10,13 @@
 
 @interface UIView(iOS)
 
+@property (nonatomic) CGFloat left;
+@property (nonatomic) CGFloat top;
+@property (nonatomic) CGFloat right;
+@property (nonatomic) CGFloat bottom;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+
 - (void)setOrigin:(CGPoint)inOrigin;
 - (void)setSize:(CGSize)inSize; 
 - (void)removeAllSubviews; 

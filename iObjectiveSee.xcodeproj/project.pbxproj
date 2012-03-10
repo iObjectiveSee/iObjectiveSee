@@ -140,7 +140,7 @@
 		7D87344514EB73F500AE2B1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 7D87344814EB73F500AE2B1C /* Build configuration list for PBXProject "iObjectiveSee" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -284,6 +284,7 @@
 				7D87346814EB73F500AE2B1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
