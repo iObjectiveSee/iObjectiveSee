@@ -16,6 +16,9 @@
 		7D87346E14EB755100AE2B1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87346D14EB755100AE2B1C /* QuartzCore.framework */; };
 		7D87347314EB769000AE2B1C /* UIColor+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87347214EB769000AE2B1C /* UIColor+iOS.m */; };
 		7D8734BF14EB784600AE2B1C /* UIView+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8734BE14EB784600AE2B1C /* UIView+iOS.m */; };
+		7D89B119150D5116006CB3D4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D89B118150D5116006CB3D4 /* WebViewController.m */; };
+		7D89B120150D591F006CB3D4 /* UIViewController+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D89B11F150D591E006CB3D4 /* UIViewController+iOS.m */; };
+		7D89B128150D7979006CB3D4 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 7D89B127150D7979006CB3D4 /* images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,11 @@
 		7D87347414EB76D200AE2B1C /* CGGeometry+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+iOS.h"; path = "Extensions/CGGeometry+iOS.h"; sourceTree = "<group>"; };
 		7D8734BD14EB784600AE2B1C /* UIView+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+iOS.h"; path = "Extensions/UIView+iOS.h"; sourceTree = "<group>"; };
 		7D8734BE14EB784600AE2B1C /* UIView+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+iOS.m"; path = "Extensions/UIView+iOS.m"; sourceTree = "<group>"; };
+		7D89B117150D5116006CB3D4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ViewControllers/WebViewController.h; sourceTree = "<group>"; };
+		7D89B118150D5116006CB3D4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ViewControllers/WebViewController.m; sourceTree = "<group>"; };
+		7D89B11E150D591E006CB3D4 /* UIViewController+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+iOS.h"; path = "Extensions/UIViewController+iOS.h"; sourceTree = "<group>"; };
+		7D89B11F150D591E006CB3D4 /* UIViewController+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+iOS.m"; path = "Extensions/UIViewController+iOS.m"; sourceTree = "<group>"; };
+		7D89B127150D7979006CB3D4 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 			children = (
 				7D87346114EB73F500AE2B1C /* AppDelegate.h */,
 				7D87346214EB73F500AE2B1C /* AppDelegate.m */,
+				7D89B115150D50EF006CB3D4 /* ViewControllers */,
 				7D87346914EB744300AE2B1C /* Extensions */,
 				7D87345914EB73F500AE2B1C /* Supporting Files */,
 			);
@@ -98,6 +107,7 @@
 				7D87345B14EB73F500AE2B1C /* InfoPlist.strings */,
 				7D87345E14EB73F500AE2B1C /* main.m */,
 				7D87346014EB73F500AE2B1C /* iObjectiveSee-Prefix.pch */,
+				7D89B127150D7979006CB3D4 /* images */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,8 +120,19 @@
 				7D87347114EB769000AE2B1C /* UIColor+iOS.h */,
 				7D87347214EB769000AE2B1C /* UIColor+iOS.m */,
 				7D87347414EB76D200AE2B1C /* CGGeometry+iOS.h */,
+				7D89B11E150D591E006CB3D4 /* UIViewController+iOS.h */,
+				7D89B11F150D591E006CB3D4 /* UIViewController+iOS.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		7D89B115150D50EF006CB3D4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D89B117150D5116006CB3D4 /* WebViewController.h */,
+				7D89B118150D5116006CB3D4 /* WebViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D87345D14EB73F500AE2B1C /* InfoPlist.strings in Resources */,
+				7D89B128150D7979006CB3D4 /* images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +201,8 @@
 				7D87346314EB73F500AE2B1C /* AppDelegate.m in Sources */,
 				7D87347314EB769000AE2B1C /* UIColor+iOS.m in Sources */,
 				7D8734BF14EB784600AE2B1C /* UIView+iOS.m in Sources */,
+				7D89B119150D5116006CB3D4 /* WebViewController.m in Sources */,
+				7D89B120150D591F006CB3D4 /* UIViewController+iOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
