@@ -23,7 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D523E301521747E007AB13A /* NSArray+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSArray+iOS.h"; path = "Extensions/NSArray+iOS.h"; sourceTree = "<group>"; };
+		7D50850615A0FDD900D432D9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7D523E301521747E007AB13A /* NSArray+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+iOS.h"; path = "Extensions/NSArray+iOS.h"; sourceTree = "<group>"; };
 		7D523E311521747E007AB13A /* NSArray+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+iOS.m"; path = "Extensions/NSArray+iOS.m"; sourceTree = "<group>"; };
 		7D87344E14EB73F500AE2B1C /* iObjectiveSee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObjectiveSee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D87345214EB73F500AE2B1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +88,7 @@
 				7D87345414EB73F500AE2B1C /* Foundation.framework */,
 				7D87345614EB73F500AE2B1C /* CoreGraphics.framework */,
 				7D87346D14EB755100AE2B1C /* QuartzCore.framework */,
+				7D50850615A0FDD900D432D9 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
