@@ -105,6 +105,10 @@
     self.top = (self.superview.height - self.height)/2;
 }
 
+- (void)centerH {
+    self.left = (self.superview.width - self.width)/2;
+}
+
 - (void)addShadow {
     if (self.layer.shadowOpacity == 0 && self.frame.size.width > 0) {
         self.layer.shadowColor = [[UIColor blackColor] CGColor];

@@ -23,6 +23,7 @@
 - (UIViewController *)viewController;
 - (void)align;
 - (void)centerV;
+- (void)centerH;
 - (void)addShadow;
 - (void)removeShadow;
 - (void)showBounce;
