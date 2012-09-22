@@ -17,6 +17,13 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 
+@property (nonatomic) CGFloat leftBounds;
+@property (nonatomic) CGFloat topBounds;
+@property (nonatomic) CGFloat rightBounds;
+@property (nonatomic) CGFloat bottomBounds;
+@property (nonatomic) CGFloat widthBounds;
+@property (nonatomic) CGFloat heightBounds;
+
 - (void)setOrigin:(CGPoint)inOrigin;
 - (void)setSize:(CGSize)inSize; 
 - (void)removeAllSubviews; 

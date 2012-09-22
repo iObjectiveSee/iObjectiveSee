@@ -70,6 +70,66 @@
     self.frame = frame;
 }
 
+- (CGFloat)leftBounds {
+    return self.bounds.origin.x;
+}
+
+- (void)setLeftBounds:(CGFloat)x {
+    CGRect bounds = self.bounds;
+    bounds.origin.x = x;
+    self.bounds = bounds;
+}
+
+- (CGFloat)topBounds {
+    return self.bounds.origin.y;
+}
+
+- (void)setTopBounds:(CGFloat)y {
+    CGRect bounds = self.bounds;
+    bounds.origin.y = y;
+    self.bounds = bounds;
+}
+
+- (CGFloat)rightBounds {
+    return self.bounds.origin.x + self.bounds.size.width;
+}
+
+- (void)setRightBounds:(CGFloat)right {
+    CGRect bounds = self.bounds;
+    bounds.origin.x = right - bounds.size.width;
+    self.bounds = bounds;
+}
+
+- (CGFloat)bottomBounds {
+    return self.bounds.origin.y + self.bounds.size.height;
+}
+
+- (void)setBottomBounds:(CGFloat)bottom {
+    CGRect bounds = self.bounds;
+    bounds.origin.y = bottom - bounds.size.height;
+    self.bounds = bounds;
+}
+
+- (CGFloat)widthBounds {
+    return self.bounds.size.width;
+}
+
+- (void)setWidthBounds:(CGFloat)width {
+    CGRect bounds = self.bounds;
+    bounds.size.width = width;
+    self.bounds = bounds;
+}
+
+- (CGFloat)heightBounds {
+    return self.bounds.size.height;
+}
+
+- (void)setHeightBounds:(CGFloat)height {
+    CGRect bounds = self.bounds;
+    bounds.size.height = height;
+    self.bounds = bounds;
+}
+
 - (void)setOrigin:(CGPoint)inOrigin {
     [self setFrame:CGRectMake(inOrigin.x, inOrigin.y, self.frame.size.width, self.frame.size.height)];
 }
