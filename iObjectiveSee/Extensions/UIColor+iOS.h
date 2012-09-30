@@ -14,5 +14,6 @@
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 + (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b alpha:(CGFloat)alpha;
 + (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b; 
+- (UIColor *)colorByDarkeningColor;
 
 @end
