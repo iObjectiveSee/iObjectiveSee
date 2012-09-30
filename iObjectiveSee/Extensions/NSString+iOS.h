@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+UIKIT_EXTERN NSString * const kNSStringiOSEmptyString;
+
 @interface NSString (iOS)
 
 - (id)urlEncoded;

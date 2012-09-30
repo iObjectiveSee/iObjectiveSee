@@ -8,6 +8,8 @@
 
 #import "NSString+iOS.h"
 
+NSString * const kNSStringiOSEmptyString = @"";
+
 @implementation NSString (iOS)
 
 - (id)urlEncoded {
