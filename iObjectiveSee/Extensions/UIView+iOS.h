@@ -35,5 +35,7 @@
 - (void)removeShadow;
 - (void)showBounce;
 - (void)drawGradiant:(CGRect)rect colors:(NSArray *)inColors;
+- (void)fadeOut;
+- (void)fadeIn;
 
 @end

@@ -238,4 +238,16 @@
     CGContextDrawLinearGradient(context, gradient, start, end, kCGGradientDrawsBeforeStartLocation);
 }
 
+- (void)fadeOut {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha = 0;
+    }];
+}
+
+- (void)fadeIn {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha = 1;
+    }];
+}
+
 @end
