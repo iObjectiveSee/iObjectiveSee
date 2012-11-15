@@ -238,16 +238,52 @@
     CGContextDrawLinearGradient(context, gradient, start, end, kCGGradientDrawsBeforeStartLocation);
 }
 
-- (void)fadeOut {
-    [UIView animateWithDuration:0.3 animations:^{
+- (void)fadeOut:(CGFloat)duration {
+    [UIView animateWithDuration:duration animations:^{
         self.alpha = 0;
     }];
 }
 
-- (void)fadeIn {
-    [UIView animateWithDuration:0.3 animations:^{
+- (void)fadeOut {
+    [self fadeOut:0.3];
+}
+
+- (void)fadeIn:(CGFloat)duration {
+    [UIView animateWithDuration:duration animations:^{
         self.alpha = 1;
     }];
+}
+
+- (void)fadeIn {
+    [self fadeIn:0.3];
+}
+
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality opaque:(BOOL)opaque {
+    if (rect.size.width <= 0 || rect.size.height <= 0) {
+        return nil;
+    }
+    // Get Image
+    UIGraphicsBeginImageContextWithOptions(rect.size, opaque, quality);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(ctx, -rect.origin.x, -rect.origin.y);
+    CGContextClipToRect(ctx, CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height));
+    
+    [self.layer renderInContext:ctx];
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snapshot;
+}
+
+- (UIImage *)snapshot:(CGRect)rect {
+    return [self snapshot:rect quality:[UIScreen mainScreen].scale];
+}
+
+- (UIImage *)snapshot {
+    return [self snapshot:CGRectMake(0, 0, self.width, self.height)];
+}
+
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality {
+    return [self snapshot:rect quality:quality opaque:NO];
 }
 
 @end

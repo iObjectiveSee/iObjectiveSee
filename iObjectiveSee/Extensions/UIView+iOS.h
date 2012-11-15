@@ -37,5 +37,12 @@
 - (void)drawGradiant:(CGRect)rect colors:(NSArray *)inColors;
 - (void)fadeOut;
 - (void)fadeIn;
+- (void)fadeOut:(CGFloat)duration;
+- (void)fadeIn:(CGFloat)duration;
+
+- (UIImage *)snapshot;
+- (UIImage *)snapshot:(CGRect)rect;
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality;
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality opaque:(BOOL)opaque;
 
 @end
