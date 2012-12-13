@@ -17,14 +17,32 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 
+@property (nonatomic) CGFloat leftBounds;
+@property (nonatomic) CGFloat topBounds;
+@property (nonatomic) CGFloat rightBounds;
+@property (nonatomic) CGFloat bottomBounds;
+@property (nonatomic) CGFloat widthBounds;
+@property (nonatomic) CGFloat heightBounds;
+
 - (void)setOrigin:(CGPoint)inOrigin;
 - (void)setSize:(CGSize)inSize; 
 - (void)removeAllSubviews; 
 - (UIViewController *)viewController;
 - (void)align;
+- (void)centerV;
+- (void)centerH;
 - (void)addShadow;
 - (void)removeShadow;
 - (void)showBounce;
 - (void)drawGradiant:(CGRect)rect colors:(NSArray *)inColors;
+- (void)fadeOut;
+- (void)fadeIn;
+- (void)fadeOut:(CGFloat)duration;
+- (void)fadeIn:(CGFloat)duration;
+
+- (UIImage *)snapshot;
+- (UIImage *)snapshot:(CGRect)rect;
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality;
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality opaque:(BOOL)opaque;
 
 @end

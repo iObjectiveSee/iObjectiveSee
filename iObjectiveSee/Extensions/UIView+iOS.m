@@ -70,6 +70,66 @@
     self.frame = frame;
 }
 
+- (CGFloat)leftBounds {
+    return self.bounds.origin.x;
+}
+
+- (void)setLeftBounds:(CGFloat)x {
+    CGRect bounds = self.bounds;
+    bounds.origin.x = x;
+    self.bounds = bounds;
+}
+
+- (CGFloat)topBounds {
+    return self.bounds.origin.y;
+}
+
+- (void)setTopBounds:(CGFloat)y {
+    CGRect bounds = self.bounds;
+    bounds.origin.y = y;
+    self.bounds = bounds;
+}
+
+- (CGFloat)rightBounds {
+    return self.bounds.origin.x + self.bounds.size.width;
+}
+
+- (void)setRightBounds:(CGFloat)right {
+    CGRect bounds = self.bounds;
+    bounds.origin.x = right - bounds.size.width;
+    self.bounds = bounds;
+}
+
+- (CGFloat)bottomBounds {
+    return self.bounds.origin.y + self.bounds.size.height;
+}
+
+- (void)setBottomBounds:(CGFloat)bottom {
+    CGRect bounds = self.bounds;
+    bounds.origin.y = bottom - bounds.size.height;
+    self.bounds = bounds;
+}
+
+- (CGFloat)widthBounds {
+    return self.bounds.size.width;
+}
+
+- (void)setWidthBounds:(CGFloat)width {
+    CGRect bounds = self.bounds;
+    bounds.size.width = width;
+    self.bounds = bounds;
+}
+
+- (CGFloat)heightBounds {
+    return self.bounds.size.height;
+}
+
+- (void)setHeightBounds:(CGFloat)height {
+    CGRect bounds = self.bounds;
+    bounds.size.height = height;
+    self.bounds = bounds;
+}
+
 - (void)setOrigin:(CGPoint)inOrigin {
     [self setFrame:CGRectMake(inOrigin.x, inOrigin.y, self.frame.size.width, self.frame.size.height)];
 }
@@ -99,6 +159,14 @@
                               (int)self.frame.origin.y,
                               (int)self.frame.size.width,
                               (int)self.frame.size.height)];
+}
+
+- (void)centerV {
+    self.top = (self.superview.height - self.height)/2;
+}
+
+- (void)centerH {
+    self.left = (self.superview.width - self.width)/2;
 }
 
 - (void)addShadow {
@@ -168,6 +236,54 @@
     CGPoint start = CGPointMake(rect.origin.x, rect.origin.y);
     CGPoint end = CGPointMake(rect.origin.x, rect.size.height);
     CGContextDrawLinearGradient(context, gradient, start, end, kCGGradientDrawsBeforeStartLocation);
+}
+
+- (void)fadeOut:(CGFloat)duration {
+    [UIView animateWithDuration:duration animations:^{
+        self.alpha = 0;
+    }];
+}
+
+- (void)fadeOut {
+    [self fadeOut:0.3];
+}
+
+- (void)fadeIn:(CGFloat)duration {
+    [UIView animateWithDuration:duration animations:^{
+        self.alpha = 1;
+    }];
+}
+
+- (void)fadeIn {
+    [self fadeIn:0.3];
+}
+
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality opaque:(BOOL)opaque {
+    if (rect.size.width <= 0 || rect.size.height <= 0) {
+        return nil;
+    }
+    // Get Image
+    UIGraphicsBeginImageContextWithOptions(rect.size, opaque, quality);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(ctx, -rect.origin.x, -rect.origin.y);
+    CGContextClipToRect(ctx, CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height));
+    
+    [self.layer renderInContext:ctx];
+    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snapshot;
+}
+
+- (UIImage *)snapshot:(CGRect)rect {
+    return [self snapshot:rect quality:[UIScreen mainScreen].scale];
+}
+
+- (UIImage *)snapshot {
+    return [self snapshot:CGRectMake(0, 0, self.width, self.height)];
+}
+
+- (UIImage *)snapshot:(CGRect)rect quality:(float)quality {
+    return [self snapshot:rect quality:quality opaque:NO];
 }
 
 @end
