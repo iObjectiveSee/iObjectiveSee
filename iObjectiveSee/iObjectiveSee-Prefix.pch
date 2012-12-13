@@ -11,12 +11,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <QuartzCore/QuartzCore.h>
-
-    #import "UIView+iOS.h"
-    #import "UIColor+iOS.h"
-    #import "CGGeometry+iOS.h"
-
 #endif
 
 
