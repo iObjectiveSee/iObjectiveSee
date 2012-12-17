@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
 	s.author       = { "Sarah Lensing" => "sarahlensing@gmail.com" }
   s.source       = { :git => "https://github.com/iObjectiveSee/iObjectiveSee.git", :tag => "0.0.3" }
   s.platform     = :ios
-  s.source_files = 'iObjectiveSee.h', 'iObjectiveSee/Extensions/*.{h,m}', 'iObjectiveSee/ViewControllers/*.{h,m}'
+  s.source_files = 'iObjectiveSee/iObjectiveSee.h', 'iObjectiveSee/Extensions/*.{h,m}', 'iObjectiveSee/ViewControllers/*.{h,m}'
   s.frameworks = 'CoreGraphics', 'QuartzCore', 'CoreFoundation'
 end
