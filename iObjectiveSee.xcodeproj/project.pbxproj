@@ -47,6 +47,7 @@
 		7D89B11E150D591E006CB3D4 /* UIViewController+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+iOS.h"; path = "Extensions/UIViewController+iOS.h"; sourceTree = "<group>"; };
 		7D89B11F150D591E006CB3D4 /* UIViewController+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+iOS.m"; path = "Extensions/UIViewController+iOS.m"; sourceTree = "<group>"; };
 		7D89B127150D7979006CB3D4 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		7DDD214B16799AD7005FF43A /* iObjectiveSee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iObjectiveSee.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 			children = (
 				7D87346114EB73F500AE2B1C /* AppDelegate.h */,
 				7D87346214EB73F500AE2B1C /* AppDelegate.m */,
+				7DDD214B16799AD7005FF43A /* iObjectiveSee.h */,
 				7D89B115150D50EF006CB3D4 /* ViewControllers */,
 				7D87346914EB744300AE2B1C /* Extensions */,
 				7D87345914EB73F500AE2B1C /* Supporting Files */,
@@ -168,7 +170,7 @@
 		7D87344514EB73F500AE2B1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 7D87344814EB73F500AE2B1C /* Build configuration list for PBXProject "iObjectiveSee" */;
 			compatibilityVersion = "Xcode 3.2";
