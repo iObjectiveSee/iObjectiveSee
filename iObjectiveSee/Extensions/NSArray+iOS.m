@@ -46,4 +46,18 @@
     return ret;
 }
 
+- (NSString *)collectString:(NSString * (^)(id obj))block separator:(NSString *)separator {
+    NSMutableString *ret = [NSMutableString string];
+    for (id _inObj in self) {
+        NSString *str = block(_inObj);
+        if (str) {
+            if (ret.length > 0) {
+                [ret appendString:separator];
+            }
+            [ret appendString:str];
+        }
+    }
+    return ret;
+}
+
 @end

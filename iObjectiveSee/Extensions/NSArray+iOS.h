@@ -14,5 +14,6 @@
 - (id)detect:(BOOL (^)(id))block;
 - (NSArray *)collect:(id (^)(id obj))block;
 - (NSArray *)reject:(BOOL (^)(id obj))block;
+- (NSString *)collectString:(NSString * (^)(id obj))block separator:(NSString *)separator;
 
 @end
