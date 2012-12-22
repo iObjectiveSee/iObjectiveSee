@@ -46,7 +46,7 @@ static CancelBlock _cancelBlock;
     for(NSString* thisButtonTitle in buttonTitles)
         [actionSheet addButtonWithTitle:thisButtonTitle];
     
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
+    [actionSheet addButtonWithTitle:NSLocalizedString(@"ios-general-cancel", nil)];
     actionSheet.cancelButtonIndex = [buttonTitles count];
     
     if(destructiveButtonTitle)

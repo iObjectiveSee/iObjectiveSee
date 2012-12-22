@@ -99,10 +99,11 @@
 
 #pragma mark AlertViewDelegate method
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"reload"]) {
+    NSString *btnTitle = [alertView buttonTitleAtIndex:buttonIndex];
+	if([btnTitle isEqualToString:NSLocalizedString(@"ios-general-reload", nil)]) {
 		[_webView reload];
 	}
-	else if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"cancel"]) {
+	else if([btnTitle isEqualToString:NSLocalizedString(@"ios-general-cancel", nil)]) {
 		[_webView stopLoading];
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	}
@@ -110,8 +111,7 @@
 
 #pragma mark WebViewDelegate methods
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    //[self.navigationController.navigationBar setTitle:@"loading..."];
-    self.title = @"loading...";
+    self.title = NSLocalizedString(@"web-vc-title-loading", nil);
     [self showLoading];
 	return YES;
 }
@@ -121,7 +121,6 @@
     NSString *title = [_webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     if (title.length > 0) {
         self.title = title;
-        //[self.navigationBar setTitle:title];
     }
 	_goBackButton.enabled = [webView canGoBack];
     _goForwardButton.enabled = [webView canGoForward];
@@ -134,11 +133,10 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     if (error.code != -999) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"loading error."
-                                                         message:@"an error occured while trying to load this page."
-                                                        delegate:self
-                                               cancelButtonTitle:@"cancel"
-                                               otherButtonTitles:@"reload",nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"web-vc-loading-error-title", nil)
+                                                         message:NSLocalizedString(@"web-vc-loading-error-msg", nil)                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"ios-general-cancel", nil)
+                                               otherButtonTitles:NSLocalizedString(@"ios-general-reload", nil), nil];
         [alert show];	
     }
 }
