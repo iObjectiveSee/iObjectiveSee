@@ -16,4 +16,7 @@
 + (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b; 
 - (UIColor *)colorByDarkeningColor;
 
++ (UIColor *)twitterBlue;
++ (UIColor *)facebookBlue;
+
 @end

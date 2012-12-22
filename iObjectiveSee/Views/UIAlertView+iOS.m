@@ -34,10 +34,14 @@ static CancelBlock _cancelBlock;
 
 + (void)alertView:(UIAlertView*) alertView didDismissWithButtonIndex:(NSInteger) buttonIndex {
 	if(buttonIndex == [alertView cancelButtonIndex]) {
-		_cancelBlock();
+		if (_cancelBlock) {
+            _cancelBlock();
+        }
 	}
     else {
-        _dismissBlock(buttonIndex - 1, alertView); // cancel button is button 0
+        if (_dismissBlock) {
+            _dismissBlock(buttonIndex - 1, alertView); // cancel button is button 0
+        }
     }
 }
 

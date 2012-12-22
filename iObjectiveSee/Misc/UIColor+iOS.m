@@ -106,4 +106,12 @@
 	return retColor;
 }
 
++ (UIColor *)twitterBlue {
+    return [UIColor colorWithHexString:@"3e8fcb"];
+}
+
++ (UIColor *)facebookBlue {
+    return [UIColor colorWithHexString:@"3b5998"];
+}
+
 @end
