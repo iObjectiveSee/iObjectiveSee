@@ -12,6 +12,8 @@ UIKIT_EXTERN NSString * const kNSStringiOSEmptyString;
 
 @interface NSString (iOS)
 
-- (id)urlEncoded;
+- (NSString *)urlEncoded;
+- (NSString *)urlDecoded;
+- (BOOL)containsSubstring:(NSString *)substring;
 
 @end

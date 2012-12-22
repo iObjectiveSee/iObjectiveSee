@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef void (^DismissBlock)(int buttonIndex, id view);
-typedef void (^CancelBlock)();
+#import "iOSBlockDefinitions.h"
 
 @interface UIAlertView (iOS)
 

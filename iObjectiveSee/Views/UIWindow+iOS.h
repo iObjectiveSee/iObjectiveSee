@@ -10,4 +10,9 @@
 
 @interface UIWindow (iOS)
 
+- (void)showWithAnimation;
+- (void)showWithAnimation:(void (^)(BOOL finished))completion;
+- (void)hideWithAnimation;
+- (void)hideWithAnimation:(void (^)(BOOL finished))completion;
+
 @end

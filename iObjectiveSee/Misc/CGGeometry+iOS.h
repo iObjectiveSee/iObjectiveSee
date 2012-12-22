@@ -14,3 +14,15 @@ __CGSizeGreaterThanSize(CGSize size1, CGSize size2) {
 #define CGSizeGreaterThanSize __CGSizeGreaterThanSize
 
 
+CG_INLINE CGFloat
+__DegreesToRadians(CGFloat degrees) {
+    return degrees * M_PI / 180;
+}
+#define DegreesToRadians
+
+CG_INLINE CGFloat
+__RadiansToDegrees(CGFloat radians) {
+    return radians * 180/M_PI;
+}
+#define RadiansToDegrees
+
