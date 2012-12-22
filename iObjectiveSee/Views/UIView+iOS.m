@@ -163,10 +163,24 @@
 }
 
 - (void)centerV {
+    if (!self.superview) {
+        return;
+    }
     self.top = (self.superview.height - self.height)/2;
 }
 
 - (void)centerH {
+    if (!self.superview) {
+        return;
+    }
+    self.left = (self.superview.width - self.width)/2;
+}
+
+- (void)centerHV {
+    if (!self.superview) {
+        return;
+    }
+    self.top = (self.superview.height - self.height)/2;
     self.left = (self.superview.width - self.width)/2;
 }
 

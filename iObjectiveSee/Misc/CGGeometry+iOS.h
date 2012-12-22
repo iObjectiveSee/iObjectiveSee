@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#define iOSDefaultToolBarHeight 44.0f
+#define iOSDefaultNavigationBarHeight 44.0f
+#define iOSDefaultTabBarHeight 49.0f
 
 CG_INLINE bool
 __CGSizeGreaterThanSize(CGSize size1, CGSize size2) {
@@ -25,4 +28,3 @@ __RadiansToDegrees(CGFloat radians) {
     return radians * 180/M_PI;
 }
 #define RadiansToDegrees
-

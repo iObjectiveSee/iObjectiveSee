@@ -18,11 +18,6 @@
 }
 
 @property (nonatomic, copy) NSString *urlString;
-//@property (nonatomic, assign) UIWebView *webView;
-//@property (nonatomic, assign) UIToolbar *toolBar;
-//@property (nonatomic, assign) UIBarButtonItem *goBackButton;
-//@property (nonatomic, assign) UIBarButtonItem *goForwardButton;
-//@property (nonatomic, retain) UIActivityIndicatorView *loadingIndicator;
 
 - (id)initWithURLString:(NSString *)URLString;
 

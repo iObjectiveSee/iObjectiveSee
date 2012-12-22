@@ -9,21 +9,11 @@
 #import "WebViewController.h"
 #import "UIViewController+iOS.h"
 #import "UIView+iOS.h"
-
-@interface WebViewController ()
-
-@end
+#import "CGGeometry+iOS.h"
 
 @implementation WebViewController
 
 @synthesize urlString = _urlString;
-//@synthesize webView = _webView;
-//@synthesize toolBar = _toolBar;
-//@synthesize goBackButton = _goBackButton;
-//@synthesize goForwardButton = _goForwardButton;
-//@synthesize loadingIndicator = _loadingIndicator;
-
-#define toolBarHeight 44.0f
 
 - (id)initWithURLString:(NSString *)URLString {
     self = [super init];
@@ -40,7 +30,7 @@
 }
 
 - (void)setupWebView {
-    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-toolBarHeight)];
+    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-iOSDefaultToolBarHeight)];
     _webView.delegate = self;
     _webView.scalesPageToFit = YES;
     [self.view addSubview:_webView];
@@ -57,7 +47,7 @@
     UIBarButtonItem *loadingBtn = [[UIBarButtonItem alloc]initWithCustomView:_loadingIndicator];
     UIBarButtonItem *div = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-toolBarHeight, self.view.width, toolBarHeight)];
+    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-iOSDefaultToolBarHeight, self.view.width, iOSDefaultToolBarHeight)];
     _toolBar.items = [NSArray arrayWithObjects:_goBackButton, div, _goForwardButton, div, div, div, loadingBtn, nil];
     [self.view addSubview:_toolBar];
 }
@@ -109,15 +99,13 @@
 
 #pragma mark AlertViewDelegate method
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-	if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString: @"reload"]) {
+	if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"reload"]) {
 		[_webView reload];
 	}
-	else if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString: @"cancel"]) {
+	else if([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"cancel"]) {
 		[_webView stopLoading];
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	}
-    
 }
 
 #pragma mark WebViewDelegate methods
@@ -144,9 +132,7 @@
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
-
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    
     if (error.code != -999) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"loading error."
                                                          message:@"an error occured while trying to load this page."

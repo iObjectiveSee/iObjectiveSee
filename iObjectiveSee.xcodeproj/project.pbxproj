@@ -23,6 +23,7 @@
 		7D67FCE2168667D40000AB1D /* NSMutableDictionary+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FCE1168667D30000AB1D /* NSMutableDictionary+iOS.m */; };
 		7D67FCE51686683C0000AB1D /* UIActionSheet+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FCE41686683B0000AB1D /* UIActionSheet+iOS.m */; };
 		7D67FCE9168669EA0000AB1D /* NSDictionary+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FCE8168669EA0000AB1D /* NSDictionary+iOS.m */; };
+		7D67FCEB16866CE70000AB1D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FCEA16866CE60000AB1D /* Default-568h@2x.png */; };
 		7D87345314EB73F500AE2B1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345214EB73F500AE2B1C /* UIKit.framework */; };
 		7D87345514EB73F500AE2B1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345414EB73F500AE2B1C /* Foundation.framework */; };
 		7D87345714EB73F500AE2B1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345614EB73F500AE2B1C /* CoreGraphics.framework */; };
@@ -68,6 +69,7 @@
 		7D67FCE6168668DE0000AB1D /* iOSBlockDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSBlockDefinitions.h; sourceTree = "<group>"; };
 		7D67FCE7168669E90000AB1D /* NSDictionary+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+iOS.h"; sourceTree = "<group>"; };
 		7D67FCE8168669EA0000AB1D /* NSDictionary+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+iOS.m"; sourceTree = "<group>"; };
+		7D67FCEA16866CE60000AB1D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		7D87344E14EB73F500AE2B1C /* iObjectiveSee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObjectiveSee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D87345214EB73F500AE2B1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7D87345414EB73F500AE2B1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,8 +144,11 @@
 		7D67FCB516865CA50000AB1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D67FCE6168668DE0000AB1D /* iOSBlockDefinitions.h */,
 				7D67FCB616865CA50000AB1D /* UIAlertView+iOS.h */,
 				7D67FCB716865CA50000AB1D /* UIAlertView+iOS.m */,
+				7D67FCE31686683B0000AB1D /* UIActionSheet+iOS.h */,
+				7D67FCE41686683B0000AB1D /* UIActionSheet+iOS.m */,
 				7D67FCB816865CA50000AB1D /* UIView+iOS.h */,
 				7D67FCB916865CA50000AB1D /* UIView+iOS.m */,
 				7D67FCBA16865CA50000AB1D /* UIWindow+iOS.h */,
@@ -152,9 +157,6 @@
 				7D67FCD8168661300000AB1D /* UILabel+iOS.m */,
 				7D67FCDD168664420000AB1D /* UIImage+iOS.h */,
 				7D67FCDE168664430000AB1D /* UIImage+iOS.m */,
-				7D67FCE31686683B0000AB1D /* UIActionSheet+iOS.h */,
-				7D67FCE41686683B0000AB1D /* UIActionSheet+iOS.m */,
-				7D67FCE6168668DE0000AB1D /* iOSBlockDefinitions.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 		7D87345914EB73F500AE2B1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D67FCEA16866CE60000AB1D /* Default-568h@2x.png */,
 				7D87345A14EB73F500AE2B1C /* iObjectiveSee-Info.plist */,
 				7D87345B14EB73F500AE2B1C /* InfoPlist.strings */,
 				7D87345E14EB73F500AE2B1C /* main.m */,
@@ -268,6 +271,7 @@
 			files = (
 				7D87345D14EB73F500AE2B1C /* InfoPlist.strings in Resources */,
 				7D89B128150D7979006CB3D4 /* images in Resources */,
+				7D67FCEB16866CE70000AB1D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

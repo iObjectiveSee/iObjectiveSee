@@ -31,6 +31,7 @@
 - (void)align;
 - (void)centerV;
 - (void)centerH;
+- (void)centerHV;
 - (void)addShadow;
 - (void)removeShadow;
 - (void)showBounce;
