@@ -14,24 +14,3 @@
 #endif
 
 
-#ifdef DEBUG
-#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#else
-#define DLog(...)
-#endif
-
-#define kMainWindow [[[UIApplication sharedApplication] delegate] window]
-
-#define kMacDefaultDisabledAlpha 0.439216f
-
-#define RGB_COLOR(r, g, b) [UIColor colorWithRed:(r / 255.0f) green:(g / 255.0f) blue:(b / 255.0f) alpha:1.0f]
-
-#define RGB_ALPHA_COLOR(r, g, b, a) [UIColor colorWithRed:(r / 255.0f) green:(g / 255.0f) blue:(b / 255.0f) alpha:(a < 1.0 ? a : (a / 255.0f))]
-
-#define DOCUMENT_PATH(inPath) [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:inPath]
-
-#define BUNDLE_PATH(inPath) [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:inPath]
-
-#define TEMPORARY_PATH(inPath) [NSTemporaryDirectory() stringByAppendingPathComponent:inPath]
-
-#define IS_EMPTY_STRING(inString) (!inString || (NSNull *)inString == [NSNull null] || [[inString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""] || [[inString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@"<null>"])

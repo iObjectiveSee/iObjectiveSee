@@ -31,4 +31,8 @@ NSString * const kNSStringiOSEmptyString = @"";
     return [self rangeOfString:substring].length > 0;
 }
 
+- (BOOL)isEmpty {
+    return !self || (NSNull *)self == [NSNull null] || [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""] || [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@"<null>"];
+}
+
 @end

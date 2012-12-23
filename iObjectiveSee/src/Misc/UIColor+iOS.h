@@ -10,6 +10,8 @@
 
 @interface UIColor(iOS)
 
+#define kiOSDefaultDisabledAlpha 0.439216f
+
 + (UIColor *)randomColor;
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 + (UIColor *)colorWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b alpha:(CGFloat)alpha;

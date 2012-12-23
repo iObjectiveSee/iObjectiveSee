@@ -6,8 +6,6 @@
 //
 //
 
-#ifndef iObjectiveSee_iObjectiveSee_h
-#define iObjectiveSee_iObjectiveSee_h
 
 //Misc
 #import "CGGeometry+iOS.h"
@@ -34,4 +32,16 @@
 #import "UILabel+iOS.h"
 #import "UIImage+iOS.h"
 
+
+//From .pch
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define DLog(...)
 #endif
+
+#define DOCUMENT_PATH(inPath) [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:inPath]
+
+#define BUNDLE_PATH(inPath) [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:inPath]
+
+#define TEMPORARY_PATH(inPath) [NSTemporaryDirectory() stringByAppendingPathComponent:inPath]
