@@ -46,4 +46,6 @@
 - (UIImage *)snapshot:(CGRect)rect quality:(float)quality;
 - (UIImage *)snapshot:(CGRect)rect quality:(float)quality opaque:(BOOL)opaque;
 
++ (CGFloat)keyBoardHeightForCurrentOrientation;
+
 @end

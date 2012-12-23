@@ -189,4 +189,17 @@
     return self.isInserted || self.isDeleted || self.isUpdated;
 }
 
+- (void)revertChanges {
+    NSDictionary *changedValues = [self changedValues];
+    NSDictionary *committedValues = [self committedValuesForKeys:[changedValues allKeys]];
+    NSEnumerator *enumerator;
+    id key;
+    enumerator = [changedValues keyEnumerator];
+    
+    while ((key = [enumerator nextObject])) {
+        NSLog(@"Reverting field ""%@"" from ""%@"" to ""%@""", key, [changedValues objectForKey:key], [committedValues objectForKey:key]);
+        [self setValue:[committedValues objectForKey:key] forKey:key];
+    }
+}
+
 @end

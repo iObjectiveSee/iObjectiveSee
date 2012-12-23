@@ -27,6 +27,8 @@
 		7D67FD3316867C8F0000AB1D /* images in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FD3216867C8E0000AB1D /* images */; };
 		7D67FD3816867CA80000AB1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FD3416867CA80000AB1D /* InfoPlist.strings */; };
 		7D67FD3916867CA80000AB1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FD3616867CA80000AB1D /* Localizable.strings */; };
+		7D67FD441686CC180000AB1D /* UIDevice+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FD431686CC160000AB1D /* UIDevice+iOS.m */; };
+		7D67FD471686CC410000AB1D /* UIApplication+iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FD461686CC400000AB1D /* UIApplication+iOS.m */; };
 		7D87345314EB73F500AE2B1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345214EB73F500AE2B1C /* UIKit.framework */; };
 		7D87345514EB73F500AE2B1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345414EB73F500AE2B1C /* Foundation.framework */; };
 		7D87345714EB73F500AE2B1C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D87345614EB73F500AE2B1C /* CoreGraphics.framework */; };
@@ -76,6 +78,10 @@
 		7D67FD3716867CA80000AB1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D67FD3A16867CB30000AB1D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = resources/fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7D67FD3B16867CB30000AB1D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = resources/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D67FD421686CC160000AB1D /* UIDevice+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+iOS.h"; sourceTree = "<group>"; };
+		7D67FD431686CC160000AB1D /* UIDevice+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+iOS.m"; sourceTree = "<group>"; };
+		7D67FD451686CC3F0000AB1D /* UIApplication+iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+iOS.h"; sourceTree = "<group>"; };
+		7D67FD461686CC400000AB1D /* UIApplication+iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+iOS.m"; sourceTree = "<group>"; };
 		7D87344E14EB73F500AE2B1C /* iObjectiveSee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObjectiveSee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D87345214EB73F500AE2B1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7D87345414EB73F500AE2B1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +119,10 @@
 				7D67FD0216867A680000AB1D /* NSDate+iOS.m */,
 				7D67FD0316867A680000AB1D /* UIColor+iOS.h */,
 				7D67FD0416867A680000AB1D /* UIColor+iOS.m */,
+				7D67FD421686CC160000AB1D /* UIDevice+iOS.h */,
+				7D67FD431686CC160000AB1D /* UIDevice+iOS.m */,
+				7D67FD451686CC3F0000AB1D /* UIApplication+iOS.h */,
+				7D67FD461686CC400000AB1D /* UIApplication+iOS.m */,
 			);
 			name = Misc;
 			path = src/Misc;
@@ -310,6 +320,8 @@
 				7D67FD2F16867A680000AB1D /* UILabel+iOS.m in Sources */,
 				7D67FD3016867A680000AB1D /* UIView+iOS.m in Sources */,
 				7D67FD3116867A680000AB1D /* UIWindow+iOS.m in Sources */,
+				7D67FD441686CC180000AB1D /* UIDevice+iOS.m in Sources */,
+				7D67FD471686CC410000AB1D /* UIApplication+iOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

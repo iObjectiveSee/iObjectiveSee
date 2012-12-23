@@ -13,6 +13,7 @@
 + (UIImage *)screenshot;
 - (UIImage *)scaleToSize:(CGSize)size;
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
 + (UIImage *)decompressImage:(UIImage *)image;
 + (UIImage*)decompressedContentsOfFile:(NSString*)path;
 - (UIImage *)imageByApplyingAlpha:(CGFloat) alpha;

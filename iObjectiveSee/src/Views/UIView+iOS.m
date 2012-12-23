@@ -8,6 +8,8 @@
 
 #import "UIView+iOS.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIDevice+iOS.h"
+#import "CGGeometry+iOS.h"
 
 @implementation UIView(iOS)
 
@@ -299,6 +301,28 @@
 
 - (UIImage *)snapshot:(CGRect)rect quality:(float)quality {
     return [self snapshot:rect quality:quality opaque:NO];
+}
+
++ (CGFloat)keyBoardHeightForCurrentOrientation {
+    switch ([UIApplication sharedApplication].statusBarOrientation) {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown: {
+            if ([UIDevice isIphone]) {
+                return kiOSPortraitiPhoneKeyBoardHeight;
+            }
+            return kiOSPortraitiPadKeyBoardHeight;
+            break;
+        }
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight:
+            if ([UIDevice isIphone]) {
+                return kiOSLandscapeiPhoneKeyBoardHeight;
+            }
+            return kiOSLandscapeiPadKeyBoardHeight;
+            break;
+        default:
+            break;
+    }
 }
 
 @end

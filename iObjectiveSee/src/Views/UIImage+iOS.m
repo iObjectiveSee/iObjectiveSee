@@ -41,6 +41,10 @@
     return image;
 }
 
+- (UIImage *)imageRotatedByRadians:(CGFloat)radians {
+    return [self imageRotatedByDegrees:RadiansToDegrees(radians)];
+}
+
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees {
     // calculate the size of the rotated view's containing box for our drawing space
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.size.width, self.size.height)];

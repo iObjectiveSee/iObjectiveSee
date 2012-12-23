@@ -32,5 +32,6 @@
 - (BOOL)deleteAndSave;
 - (BOOL)save;
 - (BOOL)hasChangesOld;
+- (void)revertChanges;
 
 @end

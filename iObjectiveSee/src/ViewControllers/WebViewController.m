@@ -30,7 +30,7 @@
 }
 
 - (void)setupWebView {
-    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-iOSDefaultToolBarHeight)];
+    _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-kiOSDefaultToolBarHeight)];
     _webView.delegate = self;
     _webView.scalesPageToFit = YES;
     [self.view addSubview:_webView];
@@ -47,7 +47,7 @@
     UIBarButtonItem *loadingBtn = [[UIBarButtonItem alloc]initWithCustomView:_loadingIndicator];
     UIBarButtonItem *div = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-iOSDefaultToolBarHeight, self.view.width, iOSDefaultToolBarHeight)];
+    _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.height-kiOSDefaultToolBarHeight, self.view.width, kiOSDefaultToolBarHeight)];
     _toolBar.items = [NSArray arrayWithObjects:_goBackButton, div, _goForwardButton, div, div, div, loadingBtn, nil];
     [self.view addSubview:_toolBar];
 }

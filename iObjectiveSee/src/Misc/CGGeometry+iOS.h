@@ -6,9 +6,14 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#define iOSDefaultToolBarHeight 44.0f
-#define iOSDefaultNavigationBarHeight 44.0f
-#define iOSDefaultTabBarHeight 49.0f
+#define kiOSDefaultToolBarHeight 44.0f
+#define kiOSDefaultNavigationBarHeight 44.0f
+#define kiOSDefaultTabBarHeight 49.0f
+
+#define kiOSPortraitiPhoneKeyBoardHeight 216
+#define kiOSPortraitiPadKeyBoardHeight 264
+#define kiOSLandscapeiPhoneKeyBoardHeight 162
+#define kiOSLandscapeiPadKeyBoardHeight 352
 
 CG_INLINE bool
 __CGSizeGreaterThanSize(CGSize size1, CGSize size2) {

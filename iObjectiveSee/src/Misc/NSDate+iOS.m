@@ -41,4 +41,128 @@
     }
 }
 
+- (NSDateComponents *)dateComponentsForCalendar:(NSCalendar *)calendar {
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekdayCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:self];
+    return components;
+}
+
+- (NSString *)shortStyleStr {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    return [formatter stringFromDate:self];
+}
+
++ (NSDate *)calendarAwareFromHourMin:(NSDate *)date {
+    NSDateComponents *components = [date dateComponentsForCalendar:[NSCalendar currentCalendar]];
+    return [NSDate dateFromHour:components.hour min:components.minute];
+    
+}
+
++ (NSDate *)dateFromHour:(int)hour min:(int)min forwardThinking:(BOOL)forwardThinking {
+    NSDate *now = [NSDate date];
+    NSDateComponents *components = [now dateComponentsForCalendar:[NSCalendar currentCalendar]];
+    [components setHour:hour];
+    [components setMinute:min];
+    NSDate *potentialRet = [[NSCalendar currentCalendar] dateFromComponents:components];
+    if (forwardThinking && [now laterThan:potentialRet]) {
+        components.day += 1;
+    }
+    //find next date that is at least later than date right NOW
+    return [[NSCalendar currentCalendar] dateFromComponents:components];
+}
+
++ (NSDate *)dateFromHour:(int)hour min:(int)min {
+    return [NSDate dateFromHour:hour min:min forwardThinking:YES];
+}
+
++ (NSDate *)dateCalendarAware {
+    NSDateComponents *components = [[NSDate date] dateComponentsForCalendar:[NSCalendar currentCalendar]];
+    return [[NSCalendar currentCalendar] dateFromComponents:components];
+}
+
+- (NSInteger)year {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    return [components year];
+}
+
+- (NSInteger)hour {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:self];
+    return components.hour;
+}
+
+- (NSInteger)minute {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSMinuteCalendarUnit fromDate:self];
+    return components.minute;
+}
+
+- (BOOL)laterThan:(NSDate *)date {
+    return [self timeIntervalSinceDate:date] > 0;
+}
+
+- (int)numDaysToAdd:(NSDate *)date soLaterThan:(NSDate *)now withDayInterval:(int)dayInterval {
+    float interval = 60*60*24*dayInterval;
+    int ret = dayInterval;
+    date = [date dateByAddingTimeInterval:interval];
+    
+    while ([now laterThan:date]) {
+        date = [date dateByAddingTimeInterval:interval];
+        ret +=dayInterval;
+    }
+    return ret;
+}
+
++ (NSDate *)dateFromString:(NSString *)dateString {
+    if ([dateString class] == [NSNull class])
+        return nil;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSDate *dateFromString = [dateFormatter dateFromString:dateString];
+    if (!dateFromString) {
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+        dateFromString = [dateFormatter dateFromString:dateString];
+    }
+    return dateFromString;
+}
+
++ (NSDate *)nextDay:(int)inDay hour:(int)inHour minute:(int)inMinute {
+    NSDate *now = [NSDate date];
+    NSDateComponents *nowComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSWeekdayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:now];
+    nowComponents.hour = inHour;
+    nowComponents.minute = inMinute;
+    
+    int day = nowComponents.weekday;
+    int deltaDay = inDay - day;
+    nowComponents.day += deltaDay;
+    return [[NSCalendar currentCalendar] dateFromComponents:nowComponents];
+}
+
++ (NSDate *)nextSunday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:1 hour:hour minute:minute];
+}
+
++ (NSDate *)nextMonday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:2 hour:hour minute:minute];
+}
+
++ (NSDate *)nextTuesday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:3 hour:hour minute:minute];
+}
+
++ (NSDate *)nextWednesday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:4 hour:hour minute:minute];
+}
+
++ (NSDate *)nextThursday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:5 hour:hour minute:minute];
+}
+
++ (NSDate *)nextFriday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:6 hour:hour minute:minute];
+}
+
++ (NSDate *)nextSaturday:(int)hour minute:(int)minute {
+    return [NSDate nextDay:7 hour:hour minute:minute];
+}
+
 @end
