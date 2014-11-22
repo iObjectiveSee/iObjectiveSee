@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iObjectiveSee"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "A repository of common, useful extensions to several default Apple classes."
   s.homepage     = "http://github.com/iObjectiveSee"
 	s.license      = 'MIT'
