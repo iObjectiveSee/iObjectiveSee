@@ -21,9 +21,9 @@
     return screenshot;
 }
 
-- (UIImage *) scaleToSize: (CGSize)size {
+- (UIImage *)scaleToSize:(CGSize)size {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef context = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault);
     CGContextClearRect(context, CGRectMake(0, 0, size.width, size.height));
     if(self.imageOrientation == UIImageOrientationRight) {
         CGContextRotateCTM(context, -M_PI_2);

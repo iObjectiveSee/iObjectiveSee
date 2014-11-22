@@ -58,7 +58,7 @@
     
 }
 
-+ (NSDate *)dateFromHour:(int)hour min:(int)min forwardThinking:(BOOL)forwardThinking {
++ (NSDate *)dateFromHour:(NSInteger)hour min:(NSInteger)min forwardThinking:(BOOL)forwardThinking {
     NSDate *now = [NSDate date];
     NSDateComponents *components = [now dateComponentsForCalendar:[NSCalendar currentCalendar]];
     [components setHour:hour];
@@ -71,7 +71,7 @@
     return [[NSCalendar currentCalendar] dateFromComponents:components];
 }
 
-+ (NSDate *)dateFromHour:(int)hour min:(int)min {
++ (NSDate *)dateFromHour:(NSInteger)hour min:(NSInteger)min {
     return [NSDate dateFromHour:hour min:min forwardThinking:YES];
 }
 
@@ -99,9 +99,9 @@
     return [self timeIntervalSinceDate:date] > 0;
 }
 
-- (int)numDaysToAdd:(NSDate *)date soLaterThan:(NSDate *)now withDayInterval:(int)dayInterval {
+- (NSInteger)numDaysToAdd:(NSDate *)date soLaterThan:(NSDate *)now withDayInterval:(NSInteger)dayInterval {
     float interval = 60*60*24*dayInterval;
-    int ret = dayInterval;
+    NSInteger ret = dayInterval;
     date = [date dateByAddingTimeInterval:interval];
     
     while ([now laterThan:date]) {
@@ -125,43 +125,43 @@
     return dateFromString;
 }
 
-+ (NSDate *)nextDay:(int)inDay hour:(int)inHour minute:(int)inMinute {
++ (NSDate *)nextDay:(NSInteger)inDay hour:(NSInteger)inHour minute:(NSInteger)inMinute {
     NSDate *now = [NSDate date];
     NSDateComponents *nowComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSWeekdayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:now];
     nowComponents.hour = inHour;
     nowComponents.minute = inMinute;
     
-    int day = nowComponents.weekday;
-    int deltaDay = inDay - day;
+    NSInteger day = nowComponents.weekday;
+    NSInteger deltaDay = inDay - day;
     nowComponents.day += deltaDay;
     return [[NSCalendar currentCalendar] dateFromComponents:nowComponents];
 }
 
-+ (NSDate *)nextSunday:(int)hour minute:(int)minute {
++ (NSDate *)nextSunday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:1 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextMonday:(int)hour minute:(int)minute {
++ (NSDate *)nextMonday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:2 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextTuesday:(int)hour minute:(int)minute {
++ (NSDate *)nextTuesday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:3 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextWednesday:(int)hour minute:(int)minute {
++ (NSDate *)nextWednesday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:4 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextThursday:(int)hour minute:(int)minute {
++ (NSDate *)nextThursday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:5 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextFriday:(int)hour minute:(int)minute {
++ (NSDate *)nextFriday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:6 hour:hour minute:minute];
 }
 
-+ (NSDate *)nextSaturday:(int)hour minute:(int)minute {
++ (NSDate *)nextSaturday:(NSInteger)hour minute:(NSInteger)minute {
     return [NSDate nextDay:7 hour:hour minute:minute];
 }
 

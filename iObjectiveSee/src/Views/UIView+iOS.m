@@ -321,6 +321,10 @@
             return kiOSLandscapeiPadKeyBoardHeight;
             break;
         default:
+            if ([UIDevice isIphone]) {
+                return kiOSPortraitiPhoneKeyBoardHeight;
+            }
+            return kiOSPortraitiPadKeyBoardHeight;
             break;
     }
 }

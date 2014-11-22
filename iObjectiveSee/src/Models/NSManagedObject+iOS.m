@@ -26,8 +26,12 @@
     return [NSEntityDescription insertNewObjectForEntityForName:[self className] inManagedObjectContext: self.managedObjectContext];
 }
 
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
 + (NSManagedObjectContext *)dettachedContext {
-    return [[UIApplication sharedApplication].delegate performSelector:@selector(managedObjectContextTransient)];
+    if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(managedObjectContextTransient)]) {
+        return [[UIApplication sharedApplication].delegate performSelector:@selector(managedObjectContextTransient)];
+    }
+    return nil;
 }
 
 + (id)createDettached {
@@ -131,11 +135,11 @@
     return [self listAllMoc:self.managedObjectContext];
 }
 
-+ (int)countAllMoc:(NSManagedObjectContext *)moc {
++ (NSInteger)countAllMoc:(NSManagedObjectContext *)moc {
 	NSFetchRequest *req = [[NSFetchRequest alloc] init];
 	[req setEntity:[NSEntityDescription entityForName:[self className] inManagedObjectContext:moc]];
 	NSError *error = nil;
-	int ret = [moc countForFetchRequest:req error:&error];
+	NSInteger ret = [moc countForFetchRequest:req error:&error];
 	if (error) {
 		NSLog(@"error %@ fetching request %@", error, req);
 		return 0;
@@ -143,7 +147,7 @@
     return ret;
 }
 
-+ (int)countAll {
++ (NSInteger)countAll {
     return [self countAllMoc:self.managedObjectContext];
 }
 

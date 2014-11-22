@@ -14,7 +14,7 @@
 + (NSManagedObjectContext *)dettachedContext;
 + (NSString *)className;
 - (NSString *)className;
-+ (int)countAll;
++ (NSInteger)countAll;
 + (NSUInteger)countForProperty:(NSString *)property withValueGreaterOrEqualTo:(id)value;
 + (NSUInteger)countForProperty:(NSString *)property withValue:(id)value;
 + (NSArray *)findAllByPropertyWithValueNotNil:(NSString *)property;

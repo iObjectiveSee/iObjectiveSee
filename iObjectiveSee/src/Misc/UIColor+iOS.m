@@ -72,7 +72,7 @@
 	CGFloat *oldComponents = (CGFloat *)CGColorGetComponents([self CGColor]);
 	CGFloat newComponents[4];
     
-	int numComponents = CGColorGetNumberOfComponents([self CGColor]);
+	NSInteger numComponents = CGColorGetNumberOfComponents([self CGColor]);
     
 	switch (numComponents)
 	{

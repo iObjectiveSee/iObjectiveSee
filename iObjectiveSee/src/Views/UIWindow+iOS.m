@@ -13,7 +13,7 @@
 - (void)showWithAnimation:(void (^)(BOOL finished))completion {
     self.hidden = NO;
     self.alpha = 0.0f;
-    [UIView animateWithDuration:1.0 delay:0.0f options:UIViewAnimationCurveEaseInOut animations:^{
+    [UIView animateWithDuration:1.0 delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 1.0;
     } completion:completion];
 }
@@ -25,7 +25,7 @@
 - (void)hideWithAnimation:(void (^)(BOOL finished))completion {
     self.alpha = 1.0f;
     self.hidden = NO;
-    [UIView animateWithDuration:.3 delay:0.0f options:UIViewAnimationCurveEaseInOut animations:^{
+    [UIView animateWithDuration:.3 delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.alpha = 0.0;
     } completion:completion];
 }

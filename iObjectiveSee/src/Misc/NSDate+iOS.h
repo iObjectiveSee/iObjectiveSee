@@ -13,21 +13,21 @@
 - (NSString *)pretty;
 - (NSString *)shortStyleStr;
 + (NSDate *)calendarAwareFromHourMin:(NSDate *)date;
-+ (NSDate *)dateFromHour:(int)hour min:(int)min;
++ (NSDate *)dateFromHour:(NSInteger)hour min:(NSInteger)min;
 + (NSDate *)dateCalendarAware;
 - (NSInteger)year;
 - (NSInteger)hour;
 - (NSInteger)minute;
 - (BOOL)laterThan:(NSDate *)date;
 + (NSDate *)dateFromString:(NSString *)dateString;
-- (int)numDaysToAdd:(NSDate *)date soLaterThan:(NSDate *)now withDayInterval:(int)dayInterval;
-+ (NSDate *)nextDay:(int)inDay hour:(int)inHour minute:(int)inMinute;
-+ (NSDate *)nextSunday:(int)hour minute:(int)minute;
-+ (NSDate *)nextMonday:(int)hour minute:(int)minute;
-+ (NSDate *)nextTuesday:(int)hour minute:(int)minute;
-+ (NSDate *)nextWednesday:(int)hour minute:(int)minute;
-+ (NSDate *)nextThursday:(int)hour minute:(int)minute;
-+ (NSDate *)nextFriday:(int)hour minute:(int)minute;
-+ (NSDate *)nextSaturday:(int)hour minute:(int)minute;
+- (NSInteger)numDaysToAdd:(NSDate *)date soLaterThan:(NSDate *)now withDayInterval:(NSInteger)dayNSIntegererval;
++ (NSDate *)nextDay:(NSInteger)inDay hour:(NSInteger)inHour minute:(NSInteger)inMinute;
++ (NSDate *)nextSunday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextMonday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextTuesday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextWednesday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextThursday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextFriday:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)nextSaturday:(NSInteger)hour minute:(NSInteger)minute;
 
 @end

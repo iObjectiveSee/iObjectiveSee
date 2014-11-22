@@ -7,6 +7,6 @@
 //
 
 //Taken from Mugunth's MKBlockAdditions.h
-typedef void (^DismissBlock)(int buttonIndex, id view);
+typedef void (^DismissBlock)(NSInteger buttonIndex, id view);
 typedef void (^CancelBlock)();
 
