@@ -188,9 +188,10 @@
 
 - (void)addShadow {
     if (self.layer.shadowOpacity == 0 && self.frame.size.width > 0) {
-        self.layer.shadowColor = [[UIColor blackColor] CGColor];
+        self.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:.2] CGColor];
         self.layer.shadowRadius = 10.0f;
-        CGRect path = CGRectMake(10, self.frame.size.height - 15, self.frame.size.width -20, 25);
+        
+        CGRect path = CGRectMake(-3, -.5, self.frame.size.width + 6, self.frame.size.height + 6.5);
         self.layer.shadowPath = [[UIBezierPath bezierPathWithRect:path] CGPath];
         
         CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
