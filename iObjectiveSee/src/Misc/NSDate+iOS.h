@@ -10,6 +10,7 @@
 
 @interface NSDate (iOS)
 
++ (long)currentMillis;
 - (NSString *)pretty;
 - (NSString *)shortStyleStr;
 + (NSDate *)calendarAwareFromHourMin:(NSDate *)date;

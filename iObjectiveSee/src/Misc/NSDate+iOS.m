@@ -10,6 +10,10 @@
 
 @implementation NSDate (iOS)
 
++ (long)currentMillis {
+    return (long)([[NSDate date] timeIntervalSince1970] * 1000.0);
+}
+
 - (NSString *)pretty {
     double ti = [self timeIntervalSinceNow];
     ti = ti * -1;
