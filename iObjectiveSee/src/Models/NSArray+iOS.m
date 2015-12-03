@@ -60,4 +60,19 @@
     return ret;
 }
 
+- (NSArray *)shuffle {
+    NSMutableArray *ret = [self mutableCopy];
+    NSUInteger count = [self count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [ret exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    return ret;
+}
+
+- (BOOL)isEmpty {
+    return self.count == 0;
+}
+
 @end
